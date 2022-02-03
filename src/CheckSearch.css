@@ -1,0 +1,29 @@
+.CheckSearch {
+    margin: 16px auto 0;
+    padding: 0 12px;
+    display: flex;
+    align-items: center;
+    width: 80%;
+    max-width: 400px;
+    height: 40px;
+    background-color: white;
+    border: 1px solid #777;
+    border-radius: 20px;
+}
+
+.CheckSearch svg {
+    width: 20px;
+    height: 20px;
+}
+
+.CheckSearch input {
+    max-width: 100%;
+    border: none;
+    border-radius: 20px;
+    font-size: 1.4rem;
+    text-indent: 8px;
+}
+
+.CheckSearch input:focus {
+    outline: none;
+}

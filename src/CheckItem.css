@@ -1,0 +1,47 @@
+.CheckItem {
+    position: relative;
+    margin: 10px 0;
+    display: flex;
+    align-items: center;
+    background-color: white;
+    border: 1px solid #999;
+    border-radius: 5px;
+    font-size: 1.2rem;
+}
+
+.CheckItem__delete {
+    position: absolute;
+    left: 16px;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
+.CheckItem__delete:hover {
+    color: red;
+}
+
+.CheckItem__text {
+    text-indent: 50px;
+}
+
+.CheckItem__text--completed {
+    text-decoration: line-through;
+}
+
+.CheckItem__checker {
+    position: absolute;
+    right: 16px;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.CheckItem__checker:hover {
+    background-color: rgb(114, 243, 114);
+}
+
+.CheckItem__checker--checked {
+    background-color: rgb(114, 243, 114);
+}
