@@ -1,6 +1,7 @@
 body {
   margin: 0;
   padding: 0;
+  min-width: 320px;
   min-height: 100vh;
   overflow-y: hidden;
   background-image: url(https://pm1.narvii.com/6540/e905959649e0d32129a946fb84d96316afe7bc09_hq.jpg);

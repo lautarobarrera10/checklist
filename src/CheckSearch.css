@@ -17,7 +17,7 @@
 }
 
 .CheckSearch input {
-    max-width: 100%;
+    width: 100%;
     border: none;
     border-radius: 20px;
     font-size: 1.4rem;
