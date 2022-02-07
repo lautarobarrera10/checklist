@@ -1,9 +1,5 @@
 import React from 'react';
-import { CheckCounter } from './CheckCounter';
-import { CheckSearch } from './CheckSearch';
-import { CheckList } from './CheckList';
-import { CheckItem } from './CheckItem.js';
-import { CreateCheckButton } from './CreateCheckButton';
+import { AppUI } from './AppUI';
 
 const defaultTareas = [
   { text:"Estudiar programación", completed:true },
@@ -45,28 +41,15 @@ function App() {
   }
 
   return (
-    <React.Fragment>
-      <CheckCounter
-        total={totalTareas}
-        completed={tareasCompletadas}
-      />
-      <CheckSearch
-        searchValue={searchValue}
-        setSearchValue={setSearchValue}
-      />
-      <CheckList>
-        {searchedTareas.map(tarea => (
-          <CheckItem
-            text={tarea.text}
-            key={tarea.text}
-            completed={tarea.completed}
-            toggleCompleteTarea={() => toggleCompleteTarea(tarea.text)}
-            onDelete={() => onDelete(tarea.text)}
-          />
-        ))}
-      </CheckList>
-      <CreateCheckButton />
-    </React.Fragment>
+    <AppUI 
+      totalTareas={totalTareas}
+      tareasCompletadas={tareasCompletadas}
+      searchValue={searchValue}
+      setSearchValue={setSearchValue}
+      searchedTareas={searchedTareas}
+      toggleCompleteTarea={toggleCompleteTarea}
+      onDelete={onDelete}
+    />
   );
 }
 
