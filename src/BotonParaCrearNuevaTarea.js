@@ -1,8 +1,9 @@
 import React from "react";
+import './BotonParaCrearNuevaTarea.css';
 
 function BotonParaCrearNuevaTarea(){
     return(
-        <button>+</button>
+        <button className="BotonParaCrearNuevaTarea">Agregar tarea</button>
     );
 }
 

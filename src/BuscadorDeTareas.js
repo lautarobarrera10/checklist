@@ -1,8 +1,9 @@
 import React from "react";
+import './BuscadorDeTareas.css';
 
 function BuscadorDeTareas(){
     return(
-        <input placeholder="Buscar tarea..." />
+        <input className="BuscadorDeTareas" placeholder="Buscar tarea..." />
     );
 }
 
