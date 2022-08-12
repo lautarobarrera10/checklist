@@ -6,17 +6,14 @@ import { useLocalStorage } from "../customHooks/useLocalStorage";
 // Importamos la UI de nuestra APP
 import { AppUI } from './AppUI';
 
-// const tareasPorDefecto = [
-//   { text: 'Esta es una tarea muy larga para ver como se adapta mi aplicación.', completed: true },
-//   { text: 'Estudiar PHP', completed: false},
-//   { text: 'Hacer informes', completed: false},
-// ]
-
-
-
 function App() {
   // Usamos nuestro Custom Hook para Local Storage
-  const [tareas, guardarTareas] = useLocalStorage('TAREAS_V1', []);
+  const {
+    error,
+    loading,
+    item: tareas,
+    saveItem: guardarTareas,
+  } = useLocalStorage('TAREAS_V1', []);
 
   // Estado del buscador
   const [valorBusqueda, cambiarValorBusqueda] = React.useState('');
@@ -71,6 +68,8 @@ function App() {
 
   return (
     <AppUI 
+    error={error}
+    loading={loading}
     tareas={tareas}
     tareasBuscadas={tareasBuscadas}
     completarTarea={completarTarea}

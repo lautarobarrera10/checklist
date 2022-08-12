@@ -7,6 +7,8 @@ import { ListaDeTareas } from "../ListaDeTareas";
 import './App.css';
 
 function AppUI({
+    loading,
+    error,
     tareas,
     tareasBuscadas,
     completarTarea,
@@ -26,6 +28,10 @@ function AppUI({
                 cambiarValorBusqueda={cambiarValorBusqueda}
             />
             <ListaDeTareas>
+                {error && <p>Hubo un error...</p>}
+                {loading && <p>Estamos cargando...</p>}
+                {(!loading && !tareasBuscadas.length) && <p>¡Crea tu primer tarea!</p>}
+
                 {tareasBuscadas.map(tarea => (
                 <Tarea
                 key={tarea.text}
