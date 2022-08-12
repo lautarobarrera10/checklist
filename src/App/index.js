@@ -1,10 +1,5 @@
 import React from "react";
-import { ContadorDeTareas } from "./ContadorDeTareas";
-import { BuscadorDeTareas } from "./BuscadorDeTareas";
-import { BotonParaCrearNuevaTarea } from "./BotonParaCrearNuevaTarea";
-import { Tarea } from "./Tarea";
-import { ListaDeTareas } from "./ListaDeTareas";
-import './App.css';
+import { AppUI } from './AppUI';
 
 const tareasPorDefecto = [
   { text: 'Esta es una tarea muy larga para ver como se adapta mi aplicación.', completed: true },
@@ -69,28 +64,15 @@ function App() {
   }
 
   return (
-    <div className="App">
-      <ContadorDeTareas 
-        totalDeTareas={tareas.length}
-        totalTareasCompletadas={tareasCompletadas.length}
-      />
-      <BuscadorDeTareas 
-        valorBusqueda={valorBusqueda}
-        cambiarValorBusqueda={cambiarValorBusqueda}
-      />
-      <ListaDeTareas>
-        {tareasBuscadas.map(tarea => (
-          <Tarea
-          key={tarea.text}
-          text={tarea.text}
-          completed={tarea.completed}
-          completarTarea={() => completarTarea(tarea.text)}
-          eliminarTarea={() => eliminarTarea(tarea.text)}
-          />
-        ))}
-      </ListaDeTareas>
-      <BotonParaCrearNuevaTarea />
-    </div>
+    <AppUI 
+    tareas={tareas}
+    tareasBuscadas={tareasBuscadas}
+    completarTarea={completarTarea}
+    eliminarTarea={eliminarTarea}
+    tareasCompletadas={tareasCompletadas}
+    valorBusqueda={valorBusqueda}
+    cambiarValorBusqueda={cambiarValorBusqueda}
+    />
   );
 }
 
