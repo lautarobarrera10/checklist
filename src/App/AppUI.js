@@ -5,28 +5,20 @@ import { BotonParaCrearNuevaTarea } from "../BotonParaCrearNuevaTarea";
 import { Tarea } from "../Tarea";
 import { ListaDeTareas } from "../ListaDeTareas";
 import './App.css';
+import { AppContext } from "../AppContext";
 
-function AppUI({
-    loading,
-    error,
-    tareas,
-    tareasBuscadas,
-    completarTarea,
-    eliminarTarea,
-    tareasCompletadas,
-    valorBusqueda,
-    cambiarValorBusqueda
-}) {
+function AppUI() {
+    const {
+        error, 
+        loading, 
+        tareasBuscadas, 
+        completarTarea, 
+        eliminarTarea,
+    } = React.useContext(AppContext);
     return(
         <div className="App">
-            <ContadorDeTareas 
-                totalDeTareas={tareas.length}
-                totalTareasCompletadas={tareasCompletadas.length}
-            />
-            <BuscadorDeTareas 
-                valorBusqueda={valorBusqueda}
-                cambiarValorBusqueda={cambiarValorBusqueda}
-            />
+            <ContadorDeTareas />
+            <BuscadorDeTareas />
             <ListaDeTareas>
                 {error && <p>Hubo un error...</p>}
                 {loading && <p>Estamos cargando...</p>}
