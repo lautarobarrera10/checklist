@@ -1,0 +1,17 @@
+#modal {
+    min-width: 320px;
+    font-family: 'Lato', sans-serif;
+}
+
+.backgroundModal {
+    min-width: 320px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

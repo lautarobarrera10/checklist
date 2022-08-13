@@ -6,6 +6,8 @@ import { Tarea } from "../Tarea";
 import { ListaDeTareas } from "../ListaDeTareas";
 import './App.css';
 import { AppContext } from "../AppContext";
+import { Modal } from "../Modal";
+import { FormularioAgregarTarea } from "../FormularioAgregarTarea";
 
 function AppUI() {
     const {
@@ -14,6 +16,7 @@ function AppUI() {
         tareasBuscadas, 
         completarTarea, 
         eliminarTarea,
+        openModal,
     } = React.useContext(AppContext);
     return(
         <div className="App">
@@ -35,6 +38,12 @@ function AppUI() {
                 ))}
             </ListaDeTareas>
             <BotonParaCrearNuevaTarea />
+            { openModal && (            
+                <Modal>
+                    <FormularioAgregarTarea>
+                    </FormularioAgregarTarea>
+                </Modal>
+            )}
         </div>
     );
 }

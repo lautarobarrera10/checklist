@@ -69,6 +69,19 @@ function AppProvider(props){
         guardarTareas(newItem);
     }
 
+    // Agregar tarea
+    const agregarTarea = text => {
+        const newItem = [...tareas];
+        newItem.push({
+            text,
+            'completed': false
+        })
+        guardarTareas(newItem);
+    }
+
+    // Estado modal
+    const [ openModal, setOpenModal ] = React.useState(false);
+
     return(
         <AppContext.Provider value={{
             totalDeTareas,
@@ -80,6 +93,9 @@ function AppProvider(props){
             tareasBuscadas, 
             completarTarea, 
             eliminarTarea,
+            openModal, 
+            setOpenModal,
+            agregarTarea,
         }}>
             {props.children}
         </AppContext.Provider>

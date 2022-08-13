@@ -1,0 +1,74 @@
+.FormularioAgregarTarea {
+    padding: 24px 20px;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    border-radius: 5px;
+}
+
+.formulario-text {
+    margin-bottom: 8px;
+    font-size: 18px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.formulario-text-title {
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.formulario-text-danger {
+    color: red;
+}
+
+.FormularioAgregarTarea textarea {
+    margin-top: 20px;
+    background-color: #F9FBFC;
+    border-radius: 2px;
+    box-shadow: 0px 5px 50px rgba(32, 35, 41, 0.25);
+    color: #1E1E1F;
+    font-size: 18px;
+    padding: 12px;
+    height: 80px;
+    font-family: 'Lato', sans-serif;
+}
+
+.FormularioAgregarTarea textarea::placeholder {
+    color: #a5a5a5;
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+}
+
+.FormularioAgregarTarea textarea:focus {
+    outline-color: rgb(0, 72, 255);
+}
+
+.agregartarea-buttons-container {
+    margin-top: 14px;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.agregartarea-button {
+    font-size: 16px;
+    color: #202329;
+    font-weight: 400;
+    width: 128px;
+    height: 40px;
+    border-radius: 3px;
+    border: none;
+    cursor: pointer;
+}
+
+.agregartarea-button-cancelar {
+    background: transparent;
+}
+
+.agregartarea-button-agregar {
+    color: white;
+    background-color: rgb(0, 72, 255);
+    box-shadow: 0px 5px 25px rgba(97, 218, 250, 0.5);
+}
