@@ -1,5 +1,5 @@
 {
-  "name": "lista-de-tareas",
+  "name": "checklist",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -40,5 +40,5 @@
   "devDependencies": {
     "gh-pages": "^4.0.0"
   },
-  "homepage": "https://lautarobarrera10.github.io/lista-de-tareas"
+  "homepage": "https://lautarobarrera10.github.io/checklist"
 }
