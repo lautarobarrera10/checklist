@@ -1,10 +1,9 @@
 import React from "react";
 
 // Importamos nuestro Custom Hook para Local Storage
-import { useLocalStorage } from "../customHooks/useLocalStorage";
-const AppContext = React.createContext();
+import { useLocalStorage } from "./useLocalStorage";
 
-function AppProvider(props){
+function useApp(){
 
     // Usamos nuestro Custom Hook para Local Storage
     const {
@@ -82,8 +81,7 @@ function AppProvider(props){
     // Estado modal
     const [ openModal, setOpenModal ] = React.useState(false);
 
-    return(
-        <AppContext.Provider value={{
+    return {
             totalDeTareas,
             totalTareasCompletadas,
             valorBusqueda, 
@@ -96,10 +94,7 @@ function AppProvider(props){
             openModal, 
             setOpenModal,
             agregarTarea,
-        }}>
-            {props.children}
-        </AppContext.Provider>
-    )      
+    };
 }
 
-export { AppContext, AppProvider };
+export { useApp };

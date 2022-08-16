@@ -1,10 +1,7 @@
 import React from "react";
-import { AppContext } from "../AppContext";
 import './BuscadorDeTareas.css';
 
-function BuscadorDeTareas(){
-    const {valorBusqueda, cambiarValorBusqueda} = React.useContext(AppContext);
-
+function BuscadorDeTareas({valorBusqueda, cambiarValorBusqueda}){
     // Acción que ocurre cuando se escribe algo en el buscador
     const cambioEnElBuscador = (evento) => {
         cambiarValorBusqueda(evento.target.value);

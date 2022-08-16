@@ -1,16 +1,12 @@
 import React from "react";
-import { AppContext } from "../AppContext";
 import './FormularioAgregarTarea.css';
 
-function FormularioAgregarTarea() {
+function FormularioAgregarTarea({setOpenModal, agregarTarea}) {
     // Estado para el textarea vacío
     const [ textareaVacio, setTextareaVacio ] = React.useState(false);
 
     // Estado para el textarea
     const [ valorNuevaTarea, setValorNuevaTarea] = React.useState('');
-
-    // Importamos stados globales
-    const { setOpenModal, agregarTarea } = React.useContext(AppContext);
 
     // Función que se ejecuta cuando hay un cambio en el textarea
     const onChange = event => {

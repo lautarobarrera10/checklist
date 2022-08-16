@@ -1,9 +1,7 @@
 import React from "react";
-import { AppContext } from "../AppContext";
 import './BotonParaCrearNuevaTarea.css';
 
-function BotonParaCrearNuevaTarea(){
-    const { setOpenModal } = React.useContext(AppContext);
+function BotonParaCrearNuevaTarea({setOpenModal}){
     return(
         <button 
         className="BotonParaCrearNuevaTarea"
