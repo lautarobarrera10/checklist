@@ -4,3 +4,7 @@
     font-size: 18px;
     text-indent: 12px;
 }
+
+.BuscadorDeTareas:disabled {
+    opacity: 25%;
+}

@@ -28,7 +28,7 @@ function App() {
   } = useApp();
   return(
     <div className="App">
-        <Header>
+        <Header loading={loading}>
             <ContadorDeTareas 
             totalDeTareas={totalDeTareas}
             totalTareasCompletadas={totalTareasCompletadas}
@@ -39,21 +39,25 @@ function App() {
             />
         </Header>
         <ListaDeTareasContainer>
-            <ListaDeTareas>
-                {error && <p>Hubo un error...</p>}
-                {loading && <p>Estamos cargando...</p>}
-                {(!loading && !tareasBuscadas.length) && <p>¡Crea tu primer tarea!</p>}
-
-                {tareasBuscadas.map(tarea => (
-                <Tarea
-                key={tarea.text}
-                text={tarea.text}
-                completed={tarea.completed}
-                completarTarea={() => completarTarea(tarea.text)}
-                eliminarTarea={() => eliminarTarea(tarea.text)}
-                />
-                ))}
-            </ListaDeTareas>
+          <ListaDeTareas 
+            error={error}
+            loading={loading}
+            tareasBuscadas={tareasBuscadas}
+            totalDeTareas={totalDeTareas}
+            onError={() => <p>Hubo un error...</p>}
+            onLoading={() => <p>Estamos cargando...</p>}
+            onEmpty={() => <p>¡Crea tu primer tarea!</p>}
+            onEmptyResult={() => <p>No hay resultado para {valorBusqueda}</p>}
+            render={tarea => (
+              <Tarea
+              key={tarea.text}
+              text={tarea.text}
+              completed={tarea.completed}
+              completarTarea={() => completarTarea(tarea.text)}
+              eliminarTarea={() => eliminarTarea(tarea.text)}
+              />
+            )}
+          />
             <BotonParaCrearNuevaTarea 
               setOpenModal={setOpenModal}
             />
