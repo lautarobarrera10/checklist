@@ -8,7 +8,7 @@ import { ListaDeTareas } from "../ListaDeTareas";
 import { BotonParaCrearNuevaTarea } from "../BotonParaCrearNuevaTarea";
 import { Modal } from "../Modal";
 import { FormularioAgregarTarea } from "../FormularioAgregarTarea";
-import { StorageChangeAlertWithStorageListener } from "../StorageChangeAlert";
+import { StorageChangeAlert } from "../StorageChangeAlert";
 
 import { useApp } from "./useApp";
 
@@ -74,7 +74,7 @@ function App() {
                 />
             </Modal>
         )}
-        <StorageChangeAlertWithStorageListener 
+        <StorageChangeAlert 
           sincronizarTareas={sincronizarTareas}
         />
     </div>

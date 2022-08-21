@@ -1,8 +1,10 @@
 import React from "react";
-import { withStorageListener } from "./withStorageListener";
+import { useStorageListener } from "./useStorageListener";
 import './StorageChangeAlert.css';
 
-function StorageChangeAlert({storageChange, sincronizarTareas}) {
+function StorageChangeAlert({sincronizarTareas}) {
+    const {storageChange, sincronizarTareasFunction} = useStorageListener(sincronizarTareas);
+
     if (storageChange) {
         return (
             <div className="StorageChangeAlert-Container">
@@ -10,7 +12,7 @@ function StorageChangeAlert({storageChange, sincronizarTareas}) {
                     <p className="StorageChangeAlert-Text">Se realizaron cambios en la lista de tareas en otra pestaña o navegador.</p>
                     <button 
                         className="StorageChangeAlert-Button"
-                        onClick={() => sincronizarTareas()}
+                        onClick={() => sincronizarTareasFunction()}
                     >Sincronizar tareas</button>
                 </div>
             </div>
@@ -18,6 +20,4 @@ function StorageChangeAlert({storageChange, sincronizarTareas}) {
     }
 }
 
-const StorageChangeAlertWithStorageListener = withStorageListener(StorageChangeAlert);
-
-export { StorageChangeAlertWithStorageListener }
+export { StorageChangeAlert }
