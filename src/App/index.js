@@ -8,6 +8,7 @@ import { ListaDeTareas } from "../ListaDeTareas";
 import { BotonParaCrearNuevaTarea } from "../BotonParaCrearNuevaTarea";
 import { Modal } from "../Modal";
 import { FormularioAgregarTarea } from "../FormularioAgregarTarea";
+import { StorageChangeAlertWithStorageListener } from "../StorageChangeAlert";
 
 import { useApp } from "./useApp";
 
@@ -25,6 +26,7 @@ function App() {
     cambiarValorBusqueda,
     setOpenModal,
     agregarTarea,
+    sincronizarTareas,
   } = useApp();
   return(
     <div className="App">
@@ -58,9 +60,11 @@ function App() {
               />
             )}
           />
+          { (!loading && !error) && (
             <BotonParaCrearNuevaTarea 
               setOpenModal={setOpenModal}
             />
+          )}
         </ListaDeTareasContainer>
         { openModal && (            
             <Modal>
@@ -70,6 +74,9 @@ function App() {
                 />
             </Modal>
         )}
+        <StorageChangeAlertWithStorageListener 
+          sincronizarTareas={sincronizarTareas}
+        />
     </div>
   );
 }

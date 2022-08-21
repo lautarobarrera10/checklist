@@ -14,7 +14,7 @@ function ListaDeTareas(props){
             {(!!props.totalDeTareas && !props.tareasBuscadas.length) && props.onEmptyResult()}
 
             <ul className="ListaDeTareas">
-                {props.tareasBuscadas.map(renderFunction)}
+                {(!props.loading && !props.error) && props.tareasBuscadas.map(renderFunction)}
             </ul>
         </React.Fragment>
     );

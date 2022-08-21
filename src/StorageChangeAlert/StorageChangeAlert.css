@@ -1,0 +1,39 @@
+.StorageChangeAlert-Container {
+    min-width: 320px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+}
+
+.StorageChangeAlert {
+    padding: 24px 20px;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    border-radius: 5px;
+}
+
+.StorageChangeAlert-Text {
+    width: 254px;
+    font-size: 18px;
+}
+
+.StorageChangeAlert-Button {
+    font-size: 16px;
+    color: white;
+    font-weight: 400;
+    width: 254px;
+    height: 40px;
+    border-radius: 3px;
+    border: none;
+    cursor: pointer;
+    background-color: rgb(0, 72, 255);
+    box-shadow: 0px 5px 25px rgba(97, 218, 250, 0.5);
+}

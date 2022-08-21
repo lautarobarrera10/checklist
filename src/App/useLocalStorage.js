@@ -2,7 +2,8 @@
 import React from "react";
 
 function useLocalStorage(itemName, initialValue) {
-
+  // Estado de sincronización
+  const [sincronizedItem, setSincronizedItem] = React.useState(true);
   // Estado de error
   const [error, setError] = React.useState(false);
   // Estado de loading
@@ -35,11 +36,15 @@ function useLocalStorage(itemName, initialValue) {
 
         // Actualizamos el estado de loading
         setLoading(false);
+
+        // Actualizamos el estado de sincronización
+        setSincronizedItem(true);
+
       } catch (error) {
         setError(error);
       }
     }, 1000)
-  })
+  }, [sincronizedItem]);
   
   // Función para guardar item tanto en Local Storage como en el estado
   const saveItem = newItem => {
@@ -52,12 +57,18 @@ function useLocalStorage(itemName, initialValue) {
       setError(error);
     }  
   }
+
+  const sincronizeItem = () => {
+    setLoading(true);
+    setSincronizedItem(false);
+  }
   
   return {
     error,
     loading,
     item,
     saveItem,
+    sincronizeItem,
   }
 }
 

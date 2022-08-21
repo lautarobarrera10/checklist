@@ -11,6 +11,7 @@ function useApp(){
         loading,
         item: tareas,
         saveItem: guardarTareas,
+        sincronizeItem: sincronizarTareas,
     } = useLocalStorage('TAREAS_V1', []);
 
     // Estado del buscador
@@ -77,7 +78,7 @@ function useApp(){
         })
         guardarTareas(newItem);
     }
-
+      
     // Estado modal
     const [ openModal, setOpenModal ] = React.useState(false);
 
@@ -94,6 +95,7 @@ function useApp(){
             openModal, 
             setOpenModal,
             agregarTarea,
+            sincronizarTareas,
     };
 }
 

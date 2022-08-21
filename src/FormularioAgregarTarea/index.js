@@ -45,7 +45,7 @@ function FormularioAgregarTarea({setOpenModal, agregarTarea}) {
             )}
             <textarea 
             placeholder="Escribe tu nueva tarea..."
-            valorNuevaTarea={valorNuevaTarea}
+            value={valorNuevaTarea}
             onChange={onChange}
             />
             <div className="agregartarea-buttons-container">
