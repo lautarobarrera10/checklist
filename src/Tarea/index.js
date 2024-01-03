@@ -17,17 +17,17 @@ function Tarea({
     return(
         <li className={`Tarea ${completed && 'TareaCompletada'}`}>
             <span 
-            className={`material-symbols-outlined Checkbox ${completed && 'CheckboxCompletada'}`}
-            onClick={completarTarea}
-            >
-                {checkbox}
-            </span>
-            <p className={`${completed && 'TextoTareaCompletada'}`} >{text}</p>
-            <span 
             className="material-symbols-outlined BotonDeBorrarTarea"
             onClick={eliminarTarea}
             >
                 delete
+            </span>
+            <p className={`${completed && 'TextoTareaCompletada'}`} >{text}</p>
+            <span 
+            className={`material-symbols-outlined Checkbox ${completed && 'CheckboxCompletada'}`}
+            onClick={completarTarea}
+            >
+                {checkbox}
             </span>
         </li>
     );
